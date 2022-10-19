@@ -1,0 +1,93 @@
+const User = require("../models/user");
+const jwt = require("jsonwebtoken");
+
+// handle errors
+const handleErrors = (err) => {
+  console.log(err.message, err.code);
+  console.log("this is err", err);
+  let errors = { email: "", password: "" };
+
+  //incorrect email
+  if (err.message === "incorrect email") {
+    errors.email = "that email is not registered";
+  }
+
+  //incorrect password
+  if (err.message === "incorrect password") {
+    errors.password = "that password is incorrect";
+  }
+
+  // duplicate email error
+  if (err.code === 11000) {
+    errors.email = "that email is already registered";
+    return errors;
+  }
+  // validation errors
+  if (err.message.includes("User validation failed")) {
+    // console.log(err);
+    Object.values(err.errors).forEach(({ properties }) => {
+      console.log("zeffproperties", properties);
+      errors[properties.path] = properties.message;
+    });
+  }
+
+  return errors;
+};
+
+const maxAge = 3 * 24 * 60 * 60;
+
+const createToken = (id) => {
+  return jwt.sign({ id }, "zecret", {
+    expiresIn: maxAge,
+  });
+};
+
+const signup_get = (req, res) => {
+  res.render("loginPage/signup", { title: "Signup" });
+};
+
+const login_get = (req, res) => {
+  res.render("loginPage/login", { title: "Login" });
+};
+
+const signup_post = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.create({ email, password });
+    // const token = createToken(user._id);
+    // res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
+    res.status(201).json({ user: user._id });
+  } catch (err) {
+    const errors = handleErrors(err);
+    res.status(400).json({ errors });
+  }
+};
+
+const login_post = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.login(email, password);
+    const token = createToken(user._id);
+    res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
+    res.status(200).json({ user: user._id });
+  } catch (err) {
+    console.log('this is err in catch login post' , err)
+    const errors = handleErrors(err);
+    res.status(400).json({ errors });
+  }
+};
+
+const logout_get = (req, res)=>{
+  res.cookie('jwt', '', {maxAge: 1})
+  res.redirect('/')
+}
+
+module.exports = {
+  signup_get,
+  login_get,
+  signup_post,
+  login_post,
+  logout_get
+};

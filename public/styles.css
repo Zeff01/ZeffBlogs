@@ -1,0 +1,375 @@
+/* google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.wrapper {
+  background-image: url("assets/indeximage2.avif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 1500px;
+  height: 100vh;
+  padding: 0px 1%;
+  margin: 0px auto;
+
+}
+
+.transparentWrapper {
+  background-color: rgba(14, 14, 14, 0.336);
+  height: 95%;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+p,
+h1,
+h3,
+a,
+h2,
+ul {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.formTitle {
+  color: rgb(79, 79, 79);
+}
+
+.passwordTitle {
+  color: rgb(79, 79, 79);
+}
+.emailTitle {
+  color: rgb(79, 79, 79);
+}
+
+/* nav & footer styles */
+.mainTitle {
+
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 3rem;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: rgb(51, 51, 51);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  background-color: rgba(66, 65, 65, 0.173);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 0px 0px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+}
+nav li {
+  margin-left: 20px;
+  list-style-type: none;
+}
+nav li a {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.2em;
+  display: block;
+  padding: 10px 16px;
+  letter-spacing: 2px;
+}
+nav h1 {
+  font-size: 3em;
+}
+nav p,
+nav a {
+  font-weight: 300;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: crimson;
+}
+
+.currentUser {
+  color: crimson;
+  font-size: 1.4em;
+}
+/* footer here */
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  color: rgb(83, 83, 83);
+  font-weight: bold;
+  font-size: large;
+}
+
+/* blogs styles */
+
+.blogs {
+  overflow-y: scroll;
+  width: 50%;
+
+  border-radius: 4px;
+  padding: 10px;
+}
+.blogs::-webkit-scrollbar {
+  width: 3px;
+  border-radius: 10px;
+}
+.blogs::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.blogs::-webkit-scrollbar-thumb {
+  background: crimson;
+}
+.blogs::-webkit-scrollbar-thumb:hover {
+  background: rgb(235, 235, 235);
+}
+
+.blogTitle {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif, Helvetica, sans-serif;
+  color: crimson;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.blogCard {
+  border: 1px solid rgb(80, 39, 39);
+  background-color: rgba(117, 108, 108, 0.534);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px;
+}
+.blogCard:hover {
+  background-color: rgba(228, 17, 17, 0.082);
+}
+
+.blogs a {
+  display: block;
+  padding: 20px;
+  padding-left: 30px;
+  border-left: 6px solid crimson;
+}
+.blogs a:hover h3 {
+  color: rgba(220, 20, 60, 0.911);
+}
+.title {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: rgb(238, 238, 238);
+}
+.snippet {
+  font-size: 1rem;
+  margin-left: 5px;
+  color: rgb(238, 238, 238);
+}
+
+/* details styles */
+.details {
+  position: relative;
+  height: 100%;
+  padding: 10px;
+}
+.detailsTitle {
+  font-size: 2rem;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: black;
+}
+.detailsBody {
+  margin-top: 30px;
+  border: 1px solid rgb(80, 39, 39);
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgba(117, 108, 108, 0.534);
+  color: rgb(255, 255, 255);
+  font-size: 1.5em;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: black;
+}
+
+.delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  padding: 8px;
+
+}
+.deleteIcon{
+  height: 40px;
+  width: 40px;
+  color: white;
+}
+.delete:hover {
+  cursor: pointer;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* create styles */
+.create-blog form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.create-blog input,
+.create-blog textarea {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 20px;
+}
+.create-blog label {
+  display: block;
+  margin-top: 24px;
+  font-size: 1.5rem;
+}
+textarea {
+  height: 120px;
+}
+.create-blog button {
+  margin-top: 20px;
+  background: crimson;
+  color: white;
+  padding: 10px;
+  border: 0;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.content {
+  margin-left: 20px;
+}
+.about {
+  background-color: rgba(117, 108, 108, 0.534);
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 0px;
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 0px 0px 4px 2px rgba(83, 83, 83, 0.459);
+  font-size: 2rem;
+}
+.aboutTitle {
+  text-align: center;
+  color: crimson;
+  margin-bottom: 10px;
+}
+.aboutContent {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.aboutIndent {
+  margin-left: 20px;
+}
+/* ------------STYLES FOR LOGIN------------- */
+
+.btnSignup {
+  border-radius: 36px;
+  background: #e6ca5a;
+  color: #222;
+}
+
+.btnSignup:hover {
+  background: #ffd738;
+  color: rgb(253, 251, 251);
+}
+
+.btnLogin:hover {
+  color: rgb(24, 24, 24);
+}
+form h2 {
+  font-size: 2.4em;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+form {
+  width: 360px;
+  margin: 0 auto;
+  padding: 30px;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: white;
+}
+input {
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  width: 100%;
+}
+label {
+  display: block;
+  margin: 20px 0 10px;
+}
+button {
+  margin-top: 30px;
+  border-radius: 36px;
+  background: #fee996;
+  border: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8em;
+  display: block;
+  padding: 10px 16px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.form-button:hover {
+  background: #ffd738;
+}
+.error {
+  color: #ff0099;
+  margin: 10px 2px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+header {
+  display: flex;
+  align-items: center;
+}
+header img {
+  width: 250px;
+  margin-right: 40px;
+}
+header h2 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+header h3 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  margin-left: 2px;
+  color: #999;
+}
+header .btn {
+  margin-top: 20px;
+  padding: 12px 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 0.8em;
+}
+
+form {
+  z-index: 10;
+}

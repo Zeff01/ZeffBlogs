@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <div class="transparentWrapper">
+    <nav>
+      <div class="site-title">
+        <a href="/blogs" ><h1 class="mainTitle">Zeff Blogs</h1></a>
+        <p>A Simple Blog Site</p>
+      </div>
+      <ul>
+        <% if (user) { %>
+        <li >Welcome! <span class="currentUser"> <%= user.email %></span></li>
+        <% } %>
+        <li><a href="/blogs">Blogs</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/blogs/create">New Blog</a></li>
+        <li><a href="/logout">Log out</a></li>
+      </ul>
+    </nav>
+
